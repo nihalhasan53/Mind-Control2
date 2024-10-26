@@ -1,0 +1,61 @@
+/* Fullscreen image background */
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../assets/randomnumberpic.png'); /* Update with the path to your image */
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.3) blur(2px); /* Dim and blur image for readability */
+  z-index: -1;
+}
+
+/* Content overlay styling */
+.content-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+  animation: fadeIn 2s ease-in-out;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+.tagline {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+
+}
+
+.generate-button {
+  padding: 12px 30px;
+  font-size: 1.1em;
+  background-color: #4CAF50;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.generate-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 10px 20px rgba(76, 175, 80, 0.4);
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

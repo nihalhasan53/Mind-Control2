@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="template-label">{{ currentTemplateDisplay }}</div> <!-- Add this line -->
+
+  <input type="text" id="inputNumber" placeholder="Enter number (16000-20999)" [value]="currentNumber" readonly>
+  <p class="bold center-text"><span id="total">{{ total }}</span></p> <!-- Centered total -->
+
+  <div class="keypad">
+      <button class="key" (click)="addDigit('1')">1</button>
+      <button class="key" (click)="addDigit('2')">2</button>
+      <button class="key" (click)="addDigit('3')">3</button>
+      <button class="key" (click)="addDigit('4')">4</button>
+      <button class="key" (click)="addDigit('5')">5</button>
+      <button class="key" (click)="addDigit('6')">6</button>
+      <button class="key" (click)="addDigit('7')">7</button>
+      <button class="key" (click)="addDigit('8')">8</button>
+      <button class="key" (click)="addDigit('9')">9</button>
+      <button id="backspace" class="special" (click)="backspace()">←</button>
+      <button class="key" (click)="addDigit('0')">0</button>
+      <button id="ok" class="special" (click)="generateNumbers()">OK</button>
+  </div>
+  <br>
+  <div class="button-row">
+      <button id="resetButton" class="action-button" (click)="reset()">Reset</button>
+      <button id="generateButton" class="action-button" (click)="generateNumbers()">Generate</button>
+  </div>
+  <br>
+
+  <div class="results">
+      <table>
+          <tr>
+              <td class="left-align bold">First Number:</td>
+              <td class="right-align">{{ result1 }}</td>
+          </tr>
+          <tr>
+              <td class="left-align bold">Second Number:</td>
+              <td class="right-align">{{ result2 }}</td>
+          </tr>
+          <tr>
+              <td class="left-align bold">Third Number:</td>
+              <td class="right-align">{{ result3 }}</td>
+          </tr>
+          <tr>
+              <td class="left-align bold">Fourth Number:</td>
+              <td class="right-align" (click)="revealFourthNumber()">{{ fourthNumber }}</td>
+          </tr>
+          <tr>
+              <td>--------------------</td>
+              <td></td>
+          </tr>
+          <tr>
+              <td class="left-align bold">Subtotal:</td>
+              <td class="right-align">{{ subtotal }}</td>
+          </tr>
+      </table>
+  </div>
+</div>
